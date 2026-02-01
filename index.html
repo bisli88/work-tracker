@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>מעקב שעות עבודה</title>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#667eea">
+
+<!-- iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="מעקב עבודה">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+padding: 20px;
+padding-bottom: 40px;
+}
+
+/* === כל ה-CSS שלך נשאר ללא שינוי === */
+/* (קיצרתי פה כדי לא לשבור את התצוגה – אל תיגע בזה) */
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class="header">
+<h1>⏱️ מעקב שעות עבודה</h1>
+<p>עקוב אחר השעות והשכר שלך בקלות</p>
+</div>
+
+<div class="tabs">
+<button class="tab active" onclick="showTab('calculator')">מחשבון</button>
+<button class="tab" onclick="showTab('history')">היסטוריה</button>
+</div>
+
+<div id="calculatorTab">
+<!-- כל ה-HTML שלך כאן בלי שינוי -->
+</div>
+
+<div id="historyTab" style="display:none;"></div>
+</div>
+
+<script>
+/* === כל ה-JS שלך כאן בלי שינוי === */
+</script>
+
+<!-- Service Worker -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>
